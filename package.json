@@ -1,16 +1,24 @@
 {
-  "name": "geartogather",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.8.0",
-  "dependencies": {
-    "typescript": "^5.8.3"
-  }
+	"name": "nuxt-app",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "pnpm run build && wrangler pages dev",
+		"postinstall": "nuxt prepare",
+		"deploy": "pnpm run build && wrangler pages deploy",
+		"cf-typegen": "wrangler types"
+	},
+	"dependencies": {
+		"nuxt": "^3.17.3",
+		"vue": "^3.5.13",
+		"vue-router": "^4.5.1"
+	},
+	"devDependencies": {
+		"h3": "^1.15.3",
+		"nitro-cloudflare-dev": "^0.2.2",
+		"wrangler": "^4.14.4"
+	}
 }
