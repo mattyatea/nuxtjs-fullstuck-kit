@@ -1,11 +1,8 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  <p>Hello Workers!</p>
+  <div>
+    <p>Welcome to your Nuxt 3 app</p>
+  </div>
 </template>
-
-<style scoped>
-
-</style>

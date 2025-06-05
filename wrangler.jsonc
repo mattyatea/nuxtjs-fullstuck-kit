@@ -5,8 +5,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "",
-      "database_id": ""
+      "database_name": "your_database_name",
+      "database_id": "your_database_id"
     }
   ]
 }
