@@ -3,8 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "url";
 
 export default defineNuxtConfig({
-	modules: ["@nuxtjs/tailwindcss"],
 	devtools: { enabled: true },
+
+	css: ["./app/assets/index.css"],
 
 	compatibilityDate: "2024-11-01",
 	// Provide path aliases: $root -> root, # -> shared
