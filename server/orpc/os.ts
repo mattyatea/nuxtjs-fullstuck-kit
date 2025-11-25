@@ -1,5 +1,5 @@
 import { implement } from "@orpc/server";
-import { contract } from "#shared/orpc";
+import { contract } from "#/orpc";
 import { dbProviderMiddleware } from "@/server/middlewares/db";
 import type { PrismaClient } from "@/server/prisma-client";
 

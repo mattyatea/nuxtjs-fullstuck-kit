@@ -1,5 +1,5 @@
-import { os } from "./os";
-import { example } from "./procedures/example";
+import { os } from "@/server/orpc/os";
+import { example } from "@/server/orpc/procedures/example";
 
 export { os };
 
