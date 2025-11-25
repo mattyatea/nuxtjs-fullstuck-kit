@@ -1,7 +1,7 @@
 import { implement } from '@orpc/server'
-import { dbProviderMiddleware } from '../middlewares/db'
-import { contract } from '#shared/orpc/contract'
-import type { PrismaClient } from '../../prisma-client/client'
+import { dbProviderMiddleware } from '@/server/middlewares/db'
+import { contract } from '#shared/orpc'
+import type { PrismaClient } from '@/server/prisma-client'
 
 export interface ORPCContext {
   db: PrismaClient

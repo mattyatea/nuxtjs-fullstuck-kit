@@ -1,12 +1,12 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
-  output          = "../prisma-client"
+  output          = "../server/prisma-client"
 }
 
 generator zod {
   provider = "zod-prisma-types"
-  output   = "../prisma-client/zod"
+  output   = "../server/prisma-client/zod"
 }
 
 datasource db {

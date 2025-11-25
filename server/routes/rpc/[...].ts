@@ -1,6 +1,6 @@
 import { RPCHandler } from '@orpc/server/node'
 import { router } from '@/server/orpc'
-import { PrismaClient } from '~/prisma-client'
+import { PrismaClient } from '@/server/prisma-client'
 
 const handler = new RPCHandler(router)
 
