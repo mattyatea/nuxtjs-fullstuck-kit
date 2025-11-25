@@ -1,1 +1,1 @@
-export { default } from '@/server/routes/rpc/[...].js'
+export { default } from "@/server/routes/rpc/[...].js";

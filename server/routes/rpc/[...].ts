@@ -1,25 +1,21 @@
-import { RPCHandler } from '@orpc/server/node'
-import { router } from '@/server/orpc'
-import { PrismaClient } from '@/server/prisma-client'
+import { RPCHandler } from "@orpc/server/node";
+import { router } from "@/server/orpc";
+import { PrismaClient } from "@/server/prisma-client";
 
-const handler = new RPCHandler(router)
+const handler = new RPCHandler(router);
 
 export default defineEventHandler(async (event) => {
-  const { matched } = await handler.handle(
-    event.node.req,
-    event.node.res,
-    {
-      prefix: '/rpc',
-      context: {
-        db: new PrismaClient(),
-      },
-    },
-  )
+	const { matched } = await handler.handle(event.node.req, event.node.res, {
+		prefix: "/rpc",
+		context: {
+			db: new PrismaClient(),
+		},
+	});
 
-  if (matched) {
-    return
-  }
+	if (matched) {
+		return;
+	}
 
-  setResponseStatus(event, 404, 'Not Found')
-  return 'Not found'
-})
+	setResponseStatus(event, 404, "Not Found");
+	return "Not found";
+});
