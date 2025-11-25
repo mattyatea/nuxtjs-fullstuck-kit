@@ -1,6 +1,6 @@
 import { RPCHandler } from "@orpc/server/node";
 import { router } from "@/server/orpc";
-import { PrismaClient } from "@/server/prisma-client";
+import { prisma } from "@/server/prisma-client";
 
 const handler = new RPCHandler(router);
 
@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 	const { matched } = await handler.handle(event.node.req, event.node.res, {
 		prefix: "/rpc",
 		context: {
-			db: new PrismaClient(),
+			db: prisma,
 		},
 	});
 
