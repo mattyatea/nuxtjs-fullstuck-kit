@@ -14,9 +14,14 @@ export default defineNuxtPlugin((_nuxtApp) => {
 	const rpcLink = new RPCLink({
 		url: new URL("/rpc", baseURL),
 		headers: () => {
-			const token = import.meta.client
-				? localStorage.getItem("access_token")
-				: null;
+			let token: string | null = null;
+			if (import.meta.client) {
+				try {
+					token = localStorage.getItem("access_token");
+				} catch (error) {
+					console.warn("Failed to access localStorage:", error);
+				}
+			}
 			return token ? { Authorization: `Bearer ${token}` } : {};
 		},
 	});
