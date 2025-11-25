@@ -1,14 +1,8 @@
-import {implement} from '@orpc/server'
-import { dbProviderMiddleware } from '../middlewares/db'
-import type { PrismaClient } from '~/prisma-client'
-import {contract} from "#shared/orpc/contract";
+import { os } from './os'
+import { example } from './procedures/example'
 
-export interface ORPCContext {
-  db: PrismaClient
-}
+export { os }
 
-const baseOS = implement(contract);
-
-export const os = baseOS
-  .$context<ORPCContext>()
-  .use(dbProviderMiddleware)
+export const router = os.router({
+  example,
+})

@@ -1,21 +1,20 @@
 import { oc } from '@orpc/contract'
 import * as z from 'zod'
 
-export const exampleContract = oc
-  .input(
-    z.object({
-      name: z.string(),
-      age: z.number().int().min(0),
-    }),
-  )
+export const test = oc
+  .route({
+    path: '/test',
+    method: 'GET',
+  })
   .output(
     z.object({
-      id: z.number().int().min(0),
-      name: z.string(),
-      age: z.number().int().min(0),
+      message: z.string(),
     }),
   )
 
-export const contract = {
-  example: exampleContract,
-}
+export const example
+  = oc
+    .prefix('/example')
+    .router({
+      test,
+    })
