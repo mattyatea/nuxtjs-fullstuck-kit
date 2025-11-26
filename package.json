@@ -11,7 +11,8 @@
 		"lint-format": "biome check",
 		"lint-format:fix": "biome check --write",
 		"prisma:generate": "prisma generate",
-		"db:push": "prisma db push"
+		"db:push": "prisma db push",
+		"deploy": "pnpm build && wrangler deploy"
 	},
 	"dependencies": {
 		"@orpc/client": "^1.11.3",
@@ -21,6 +22,7 @@
 		"@prisma/client": "7.0.1",
 		"@tailwindcss/vite": "^4.1.17",
 		"dotenv": "^17.2.3",
+		"nitro-cloudflare-dev": "^0.2.2",
 		"nuxt": "^4.2.1",
 		"tailwindcss": "^4.1.17",
 		"vue": "^3.5.25",

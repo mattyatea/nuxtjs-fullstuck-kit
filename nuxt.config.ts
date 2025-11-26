@@ -7,21 +7,14 @@ export default defineNuxtConfig({
 
 	css: ["./app/assets/index.css"],
 
-	compatibilityDate: "2024-11-01",
+	modules: ["nitro-cloudflare-dev"],
+
+	compatibilityDate: "2025-11-25",
+
 	// Provide path aliases: $root -> root, # -> shared
 	alias: {
 		"@": fileURLToPath(new URL("./", import.meta.url)),
 		"#": fileURLToPath(new URL("./shared", import.meta.url)),
-	},
-	// also ensure vite resolves the same alias explicitly (redundant in many setups but safe)
-	vite: {
-		resolve: {
-			alias: {
-				"@": fileURLToPath(new URL("./", import.meta.url)),
-				"#": fileURLToPath(new URL("./shared", import.meta.url)),
-			},
-		},
-		plugins: [tailwindcss()],
 	},
 	nitro: {
 		prerender: {
@@ -31,9 +24,26 @@ export default defineNuxtConfig({
 			"@": fileURLToPath(new URL("./", import.meta.url)),
 			"#": fileURLToPath(new URL("./shared", import.meta.url)),
 		},
+		preset: "cloudflare_module",
+		cloudflare: {
+			deployConfig: true,
+			nodeCompat: true,
+		},
 		// Required for Prisma with D1 adapter on Cloudflare Workers
 		experimental: {
 			wasm: true,
+		},
+	},
+	vite: {
+		resolve: {
+			alias: {
+				"@": fileURLToPath(new URL("./", import.meta.url)),
+				"#": fileURLToPath(new URL("./shared", import.meta.url)),
+			},
+		},
+		plugins: [tailwindcss()],
+		build: {
+			sourcemap: false,
 		},
 	},
 });
