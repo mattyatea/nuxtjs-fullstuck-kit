@@ -1,6 +1,6 @@
 import type { ContractRouterClient } from "@orpc/contract";
+import type { AsyncDataOptions } from "nuxt/app";
 import type { contract } from "#/orpc";
-import type { AsyncDataOptions } from "#app";
 
 export const useApi = () => {
 	const { $api } = useNuxtApp();
