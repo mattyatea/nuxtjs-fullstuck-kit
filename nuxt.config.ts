@@ -24,15 +24,15 @@ export default defineNuxtConfig({
 			"@": fileURLToPath(new URL("./", import.meta.url)),
 			"#": fileURLToPath(new URL("./shared", import.meta.url)),
 		},
-		preset: "cloudflare_module",
+		preset: "cloudflare-module",
 		cloudflare: {
 			deployConfig: true,
-			nodeCompat: true,
 		},
 		// Required for Prisma with D1 adapter on Cloudflare Workers
 		experimental: {
 			wasm: true,
 		},
+		moduleSideEffects: ["@prisma/client/runtime/library.js"],
 	},
 	vite: {
 		resolve: {

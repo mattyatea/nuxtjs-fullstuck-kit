@@ -10,6 +10,3 @@ export function createPrismaClient(d1: D1Database): PrismaClient {
 	const adapter = new PrismaD1(d1);
 	return new PrismaClient({ adapter });
 }
-
-// Re-export PrismaClient type for convenience
-export type { PrismaClient } from "@/server/prisma-client/client";

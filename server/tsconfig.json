@@ -7,5 +7,6 @@
 			"@/*": ["../*"],
 			"#/*": ["../shared/*"]
 		}
-	}
+	},
+	"include": ["**/*.ts", "../worker-configuration.d.ts"]
 }
