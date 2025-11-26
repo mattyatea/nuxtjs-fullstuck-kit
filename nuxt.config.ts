@@ -31,5 +31,9 @@ export default defineNuxtConfig({
 			"@": fileURLToPath(new URL("./", import.meta.url)),
 			"#": fileURLToPath(new URL("./shared", import.meta.url)),
 		},
+		// Required for Prisma with D1 adapter on Cloudflare Workers
+		experimental: {
+			wasm: true,
+		},
 	},
 });

@@ -1,5 +1,5 @@
 import { os } from "@orpc/server";
-import type { PrismaClient } from "@/server/prisma-client";
+import type { PrismaClient } from "@/server/prisma-client/client";
 
 export const dbProviderMiddleware = os
 	.$context<{ db: PrismaClient }>()
