@@ -29,9 +29,7 @@ function getD1DatabaseName() {
 		const match = content.match(/database_name\s*=\s*"([^"]+)"/);
 
 		if (!match) {
-			console.error(
-				"Error: database_name not found in wrangler.toml",
-			);
+			console.error("Error: database_name not found in wrangler.toml");
 			console.error(
 				"Please ensure your wrangler.toml has a [[d1_databases]] section with database_name defined.",
 			);
