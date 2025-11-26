@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { useApi } from "@/app/composable/useApi";
+import { useAsyncApi } from "@/app/composable/useApi";
 
-const api = useApi();
-
-const exampleData = await api.example.test();
+const { data: exampleData } = await useAsyncApi((api) => api.example.test());
 </script>
 
 <template>
   <Card>
-    <p>{{ exampleData.message }}</p>
+    <p>{{ exampleData?.message }}</p>
   </Card>
 </template>
 
