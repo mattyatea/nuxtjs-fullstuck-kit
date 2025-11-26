@@ -8,5 +8,5 @@
 			"#/*": ["../shared/*"]
 		}
 	},
-	"include": ["**/*.ts", "../worker-configuration.d.ts"]
+	"include": ["**", "../worker-configuration.d.ts"]
 }
